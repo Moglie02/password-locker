@@ -1,57 +1,82 @@
+import unittest
+from ast import match_case
+from ssl import _PasswordType
+from interface import User
+from interface import credentials
 
+class TestClass(unittest.TestCase):
+     def __init__(self):
+        self.new_user =User('Moglie02','newpassword1234')
+        
+        def create_key(self):
+             self.assertEqual = (self.new_user.username,'Moglie02')
+             self.assertEqual = (self.new_user.password,'newpassword1234')
+             
+             def save_user_file(self):
+                 self.save_user_file =()
+                 self.assertEqual = (len(User.user_list),1)
 
-# class PasswordManager:
-#     def __init__(self):
-#         self.key = None
-#         self.password_file = None
-#         self.password_dict = {}
+             class TestCredentials(unittest.TestCase):
+                 def setUp(self):
+                     """
+                     Method that runs before each individual credentials test methods run.
+                     """
+                     def test_init(self):
+                         self.assertEqual(self.new_credential.account,'Gmail')
+                         self.assertEqual(self.new_credential.userName,'Owiti_Charles')
+                         self.assertEqual(self.new_credential.password,'yx5Gij43')
+                         
+                     def save_credential_test(self):
+                         self.new_credential.save_details()
+                         self.assertEqual(len(Credentials.credentials_list),1)
 
-#         def create_key(self,path):
-#             self.key = generate_key()
-#             with open(path,'wb') as f:
-#                 f.write(self.key)
+    def tearDown(self):
+        '''
+        method that does clean up after each test case has run.
+        '''
+        credentials.credentials_list = []
+        def test_save_many_accounts(self):
+        '''
+        test to check if we can save multiple credentials objects to our credentials list
+        '''
+        self.new_credential.save_details()
+        test_credential = credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential.save_details()
+        self.assertEqual(len(credentials.credentials_list),2)
+        def test_delete_credential(self):
+        """
+        test method to test if we can remove an account credentials from our credentials_list
+        """
+        self.new_credential.save_details()
+        test_credential = credentials("Twitter","mikeycharles","Mfh45hfk")
+        test_credential.save_details()
 
-#         def create_password_file(self, path,initial_values=None):
-#             self.password_file =path
+        self.new_credential.delete_credentials()
+        self.assertEqual(len(credentials.credentials_list),1)
+        def test_find_credentialr(self):
+        """
+        test to check if we can find a credential entry by account name and display the details of the credential
+        """
+        self.new_credential.save_details()
+        test_credential = credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential.save_details()
 
-#             if initial_values is not None:
-#                 for key, value in initial_values.items():
-#                     self.add_password(key, value) 
-#                 def load_password_file(self, path):
-#                     self.password_file = path
+        the_credential = credentials.find_credential("Twitter")
 
-#                     with open (path,'r')as f:
-#                         for line in f:
-#                             site, encrypted = line.split(":")
-#                             self.password_dict[site] = Password
-
-#                             if self.password_file is not None:
-#                                 with open(self.password_file, 'a+') as f:
-#                                     encrypted = Fernet(self.key).encrypt(password.encode())
-#                                     f.write(site + ":" + encrypted.decode() + "\n")
-
-#                 def get_password (self,site):
-#                     return self.password_dict[site]
-
-#                 def main():
-#                     password = {
-#                         "email": "12346",
-#                         "youtube": "helloworld1235",
-#                         "instagram": "myfavoritepassword_124"
-#                     }
-#                     pm = PasswordManager()
-#                     print
-
-#                     done = False
-#                     while not done:
-#                         def http_status(status):
-#                             match status:
-#                                 case 400:
-#                                     return ":"
-#                                 case 401:
-#                                     return ":"
-#                                 case 402:
-#                                     return ":" 
-
-
-
+        self.assertEqual(the_credential.account,test_credential.account)
+        def test_credential_exist(self):
+        """
+        test to check if we can return a true or false based on whether we find or can't find the credential.
+        """
+        self.new_credential.save_details()
+        the_credential = credentials("Twitter", "Moglieish", "AbCdEfGh")  
+        the_credential.save_details()
+        credential_is_found = credentials.if_credential_exist("Twitter")
+        self.assertTrue(credential_is_found)
+        def test_display_all_saved_credentials(self):
+        '''
+        method that displays all the credentials that has been saved by the user
+        '''
+        self.assertEqual(credentials.display_credentials(),credentials.credentials_list)
+if __name__ == "__main__":
+    unittest.main()
