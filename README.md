@@ -1,5 +1,6 @@
 # Password-Locker
 
+
 ## Author
 [Salma Ntidendereza](https://github.com/Moglie02/password-locker.git)
 
