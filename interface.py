@@ -28,35 +28,23 @@ class TestClass(unittest.TestCase):
                          
                      def save_credential_test(self):
                          self.new_credential.save_details()
-                         self.assertEqual(len(Credentials.credentials_list),1)
-
-    def tearDown(self):
-        '''
-        method that does clean up after each test case has run.
-        '''
-        credentials.credentials_list = []
-        def test_save_many_accounts(self):
-        '''
-        test to check if we can save multiple credentials objects to our credentials list
-        '''
-        self.new_credential.save_details()
-        test_credential = credentials("Twitter","mikeycharles","Mfh45hfk") 
-        test_credential.save_details()
-        self.assertEqual(len(credentials.credentials_list),2)
-        def test_delete_credential(self):
-        """
-        test method to test if we can remove an account credentials from our credentials_list
-        """
-        self.new_credential.save_details()
-        test_credential = credentials("Twitter","mikeycharles","Mfh45hfk")
-        test_credential.save_details()
-
-        self.new_credential.delete_credentials()
-        self.assertEqual(len(credentials.credentials_list),1)
-        def test_find_credentialr(self):
-        """
-        test to check if we can find a credential entry by account name and display the details of the credential
-        """
+                         self.assertEqual(len(credentials.credentials_list),1)
+                         def tearDown(self):
+                             
+                             credentials.credentials_list = []
+                             def test_save_many_accounts(self):
+                                 self.new_credential.save_details()
+                                 test_credential = credentials("Twitter","moglieish","AbCdEfGh")
+                                 test_credential.save_details()
+                                 self.assertEqual(len(credentials.credentials_list),2)
+                                 def test_delete_credential(self):
+                                     self.new_credential.save_details()
+                                     test_credential = credentials("Twitter","moglieish","AbCdEfGh")
+                                     test_credential.save_details()
+                                     
+                                     self.new_credential.delete_credentials()
+                                     self.assertEqual(len(credentials.credentials_list),1)
+                                     def test_find_credentialr(self):
         self.new_credential.save_details()
         test_credential = credentials("Twitter","mikeycharles","Mfh45hfk") 
         test_credential.save_details()
