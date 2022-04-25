@@ -58,6 +58,6 @@ class TestClass(unittest.TestCase):
                                              credential_is_found = credentials.if_credential_exist("Twitter")
                                              self.assertTrue(credential_is_found)
                                              def test_display_all_saved_credentials(self):
-                self.assertEqual(credentials.display_credentials(),credentials.credentials_list)
+                                                 self.assertEqual(credentials.display_credentials(),credentials.credentials_list)
 if __name__ == "__main__":
     unittest.main()
