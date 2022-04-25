@@ -53,10 +53,13 @@ class TestClass(unittest.TestCase):
                                          self.assertEqual(the_credential.account,test_credential.account)
                                          def test_credential_exist(self):
                                              self.new_credential.save_details()
+                                             
                                              the_credential = credentials("Twitter", "Moglieish", "AbCdEfGh")
                                              the_credential.save_details()
                                              credential_is_found = credentials.if_credential_exist("Twitter")
+                                             
                                              self.assertTrue(credential_is_found)
+                                             
                                              def test_display_all_saved_credentials(self):
                                                  self.assertEqual(credentials.display_credentials(),credentials.credentials_list)
                                                  
