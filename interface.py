@@ -6,11 +6,11 @@ from interface import credentials
 
 class TestClass(unittest.TestCase):
      def __init__(self):
-        self.new_user =User('Moglie02','newpassword1234')
+        self.new_user =User('Moglie02','AbCdEfGh')
         
         def create_key(self):
              self.assertEqual = (self.new_user.username,'Moglie02')
-             self.assertEqual = (self.new_user.password,'newpassword1234')
+             self.assertEqual = (self.new_user.password,'AbCdEfGh')
              
              def save_user_file(self):
                  self.save_user_file =()
