@@ -23,7 +23,7 @@ class TestClass(unittest.TestCase):
                      """
                      def test_init(self):
                          self.assertEqual(self.new_credential.account,'Gmail')
-                         self.assertEqual(self.new_credential.userName,'Owiti_Charles')
+                         self.assertEqual(self.new_credential.userName,'moglie02')
                          self.assertEqual(self.new_credential.password,'yx5Gij43')
                          
                      def save_credential_test(self):
