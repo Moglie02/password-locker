@@ -1,4 +1,4 @@
-from passlock import User, Credentials
+from main import User, Credentials
 
 def function():
 	print("               ____                         _____  _                               ")
